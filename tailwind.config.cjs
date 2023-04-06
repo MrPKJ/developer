@@ -2,6 +2,10 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
   mode: "jit",
-  theme: {},
+  theme: {
+    fontFamily: {
+      poppins: ["Poppins", sans - serif],
+    },
+  },
   plugins: [],
 };
