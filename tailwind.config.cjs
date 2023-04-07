@@ -4,7 +4,7 @@ module.exports = {
   mode: "jit",
   theme: {
     fontFamily: {
-      poppins: ["Poppins", sans - serif],
+      poppins: ["Poppins", "sans-serif"],
     },
   },
   plugins: [],
