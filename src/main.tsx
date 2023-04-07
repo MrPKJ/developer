@@ -9,7 +9,7 @@ import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <div className="w-full h-auto box-border">
+  <div className="w-full h-auto box-border bg-white font-poppins">
     <Router>
       <Navbar />
       <Routes>
