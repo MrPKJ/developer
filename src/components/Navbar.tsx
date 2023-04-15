@@ -6,7 +6,7 @@ import { nav } from "../contents/Navbar";
 export const Navbar = () => {
   let [toggle, setToggle] = useState(false);
   return (
-    <header className="w-full h-20 bg-white shadow-md px-12 flex flex-row justify-between items-center">
+    <header className="w-full h-20 bg-white shadow-md px-12 flex flex-row justify-between items-center font-poppins box-border py-5">
       <Link to={`/`}>
         <h1 className="font-bold font-poppins text-black text-xl">
           PriyanshuKJ.dev
