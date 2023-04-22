@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
-import { DEFAULT_SIZE, socials } from "../contents/Footer";
-
+import { Social } from "../chunks/Social";
 export const Footer = () => {
   const Year = new Date().getFullYear();
   return (
@@ -8,15 +6,7 @@ export const Footer = () => {
       <h3 className="font-bold text-[1rem] text-center">
         Copyright © <span>{Year}</span>. All rights are reserved
       </h3>
-      <div className="flex flex-row justify-end items-center gap-4 cursor-pointer">
-        {socials.map((content) => {
-          return (
-            <Link to={content.url}>
-              {<content.component size={DEFAULT_SIZE} />}
-            </Link>
-          );
-        })}
-      </div>
+      <Social jusitfy="RIGHT" size={20} />
     </footer>
   );
 };
