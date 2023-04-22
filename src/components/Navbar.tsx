@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { BsMenuButtonFill, BsMenuButtonWideFill } from "react-icons/bs";
 import { useState } from "react";
 import { nav } from "../contents/Navbar";
+import { GrMenu } from "react-icons/gr";
+import { HiMenuAlt1 } from "react-icons/hi";
 
 export const Navbar = () => {
   let [toggle, setToggle] = useState(false);
@@ -25,19 +26,15 @@ export const Navbar = () => {
       </nav>
       <nav className="flex flex-col lg:hidden cursor-pointer justify-between items-center w-auto relative">
         <div
-          className="flex justify-center items-center"
+          className={`flex justify-center items-center`}
           onClick={() => {
             setToggle((prev) => !prev);
           }}
         >
-          {toggle ? (
-            <BsMenuButtonFill size={20} />
-          ) : (
-            <BsMenuButtonWideFill size={20} />
-          )}
+          {toggle ? <HiMenuAlt1 size={25} /> : <GrMenu size={25} />}
         </div>
         <div
-          className={`flex-col justify-center items-center gap-5 absolute top-10 right-0 bg-[#FFFFF0] shadow-md py-5 px-10 ${
+          className={`flex-col justify-center items-center gap-5 absolute top-10 right-0 bg-[#FFFFF0] shadow-md py-5 px-10 z-50 ${
             toggle ? "flex" : "hidden"
           }`}
         >
