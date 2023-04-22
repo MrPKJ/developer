@@ -1,38 +1,26 @@
-import { useState } from "react";
-import { socials, DEFAULT_SIZE } from "../contents/Footer";
+import { socials } from "../contents/Footer";
 import { Link } from "react-router-dom";
 
-enum Justify {
-  CENTER = "CENTER",
-  LEFT = "LEFT",
-  RIGHT = "RIGHT",
-}
-
 type SocialProps = {
-  jusitfy: Justify;
+  jusitfy: "CENTER" | "LEFT" | "RIGHT";
+  size: number;
 };
 
 export const Social = (props: SocialProps) => {
-  const [justify, setJustify] = useState("justify-center");
-  switch (props.jusitfy) {
-    case "CENTER":
-      setJustify("justify-center");
-      break;
-    case "LEFT":
-      setJustify("justify-left");
-      break;
-    case "RIGHT":
-      setJustify("justify-right");
-      break;
+  let flex = "justify-center";
+  if (props.jusitfy == "CENTER") {
+    flex = "justify-center";
+  } else if (props.jusitfy == "LEFT") {
+    flex = "jusitfy-left";
+  } else if (props.jusitfy == "RIGHT") {
+    flex = "jusitfy-right";
   }
   return (
-    <div
-      className={`flex flex-row ${justify} items-center gap-4 cursor-pointer`}
-    >
+    <div className={`flex flex-row ${flex} items-center gap-4 cursor-pointer`}>
       {socials.map((content) => {
         return (
           <Link to={content.url}>
-            {<content.component size={DEFAULT_SIZE} />}
+            {<content.component size={props.size} />}
           </Link>
         );
       })}
