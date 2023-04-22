@@ -7,6 +7,9 @@ module.exports = {
       poppins: ["Poppins", "sans-serif"],
       mulish: ["Mulish", "sans-serif"],
     },
+    backgroundImage: {
+      profile: "url('https://avatars.githubusercontent.com/u/127951878?v=4')",
+    },
   },
   plugins: [],
 };
