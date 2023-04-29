@@ -14,10 +14,10 @@ export const Navbar = () => {
         </h1>
       </Link>
       <nav className="font-semibold font-poppins text-[1.05rem] hidden flex-row justify-around items-center gap-6 cursor-pointer lg:flex">
-        {nav.map((content) => {
+        {nav.map((content, index) => {
           return (
-            <Link to={content.path}>
-              <p id={content.id} className="hover:text-blue-500">
+            <Link to={content.path} key={index}>
+              <p id={content.id} key={index} className="hover:text-blue-500">
                 {content.title}
               </p>
             </Link>
@@ -38,15 +38,16 @@ export const Navbar = () => {
             toggle ? "flex" : "hidden"
           }`}
         >
-          {nav.map((content) => {
+          {nav.map((content, index) => {
             return (
-              <Link to={content.path}>
+              <Link to={content.path} key={index}>
                 <p
                   id={content.id}
                   className="hover:text-blue-500"
                   onClick={() => {
                     setToggle(false);
                   }}
+                  key={index}
                 >
                   {content.title}
                 </p>
