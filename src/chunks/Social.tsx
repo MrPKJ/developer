@@ -1,12 +1,13 @@
 import { socials } from "../contents/Footer";
 import { Link } from "react-router-dom";
+import { FC } from "react";
 
 type SocialProps = {
   jusitfy: "CENTER" | "LEFT" | "RIGHT";
   size: number;
 };
 
-export const Social = (props: SocialProps) => {
+export const Social: FC<SocialProps> = (props) => {
   let flex = "justify-center";
   if (props.jusitfy == "CENTER") {
     flex = "justify-center";
@@ -17,9 +18,9 @@ export const Social = (props: SocialProps) => {
   }
   return (
     <div className={`flex flex-row ${flex} items-center gap-4 cursor-pointer`}>
-      {socials.map((content) => {
+      {socials.map((content, index) => {
         return (
-          <Link to={content.url}>
+          <Link to={content.url} key={index}>
             {<content.component size={props.size} />}
           </Link>
         );
