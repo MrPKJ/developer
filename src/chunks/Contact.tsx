@@ -1,6 +1,10 @@
 import { FC, useState } from "react";
 import { ContactForm, searchCountryCode } from "../contents/Contact";
 import { CountryCode } from "../contents/CountryCode";
+import { useForm } from "@formspree/react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 export const ContactChunk: FC<ContactForm> = (props) => {
   let countryCode: string = searchCountryCode(
@@ -13,7 +17,8 @@ export const ContactChunk: FC<ContactForm> = (props) => {
   const [subject, setSubject] = useState("");
   const [body, setBody] = useState("");
   const [submit, setSubmit] = useState(false);
-
+  const [state, handleSubmit] = useForm("xlekzena");
+  const popup = () => toast("Email Submitted!");
   return (
     <>
       <section
@@ -39,7 +44,7 @@ export const ContactChunk: FC<ContactForm> = (props) => {
             </p>
           </section>
           <button
-            className={`w-5/6 h-1/6 rounded-sm border-black border ${
+            className={`w-5/6 h-1/6 rounded-md border-black border ${
               toggle ? "bg-white text-black" : "bg-black text-white"
             }`}
             onMouseOver={() => {
@@ -61,10 +66,14 @@ export const ContactChunk: FC<ContactForm> = (props) => {
           emailMe ? "flex" : "hidden"
         } flex-col items-center justify-evenly py-5 rounded-md font-poppins`}
       >
+        <IoMdArrowRoundBack
+          size={20}
+          className="rounded-full shadow-black shadow-sm"
+          onClick={() => setEmailMe(false)}
+        />
         <h1 className="font-semibold text-xl">Contact Me via Email.</h1>
         <form
-          action="https://formspree.io/f/xlekzena"
-          method="POST"
+          onSubmit={handleSubmit}
           className="w-5/6 h-5/6 flex flex-col items-center justify-between"
         >
           <label
@@ -119,7 +128,7 @@ export const ContactChunk: FC<ContactForm> = (props) => {
             value={`Submit`}
             className={`w-3/6 py-2 border border-black ${
               submit ? "bg-white text-black" : "bg-black text-white"
-            } rounded-sm mt-3`}
+            } rounded-md mt-3`}
             onMouseOver={() => {
               setSubmit(true);
             }}
@@ -127,8 +136,11 @@ export const ContactChunk: FC<ContactForm> = (props) => {
               setSubmit(false);
             }}
             name={`Submit`}
+            onClick={popup}
+            disabled={state.submitting}
           />
         </form>
+        <ToastContainer />
       </section>
     </>
   );
