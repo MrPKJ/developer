@@ -1,5 +1,4 @@
-import { Social } from "../chunks/Social";
-import { IoIosLaptop } from "react-icons/io";
+import { Hero } from "../contents/Home";
 
 export const Home = () => {
   return (
@@ -8,22 +7,21 @@ export const Home = () => {
         <article className="flex flex-col justify-center xl:items-start items-center xl:text-start text-center xl:w-[500px] w-full text-black font-poppins gap-3 relative">
           <section className="flex xl:flex-row flex-col xl:items-end items-center xl:justify-start justify-center">
             <h1 className="font-bold xl:text-[55px] text-[40px] xl:w-3/4 w-full">
-              Front-End React Developer
+              {Hero.heading}
             </h1>
             <div className="h-full">
-              <IoIosLaptop size={100} />
+              <Hero.supporticon size={100} />
             </div>
           </section>
           <p className="font-mulish text-[#767676] text-[18px] my-4">
-            Hi, I'm Priyanshu Kumar Jha. A passionate Programmer based in Bihar,
-            India. 📍
+            {Hero.description}
           </p>
-          <Social jusitfy="LEFT" size={30} />
+          <Hero.socialicon jusitfy="LEFT" size={30} />
         </article>
         <img
           className="rounded-full object-fill xl:h-[350px] h-auto xl:w-[350px] w-auto"
-          src={`https://avatars.githubusercontent.com/u/127951878?v=4`}
-          alt="developer"
+          src={Hero.image.url}
+          alt={Hero.image.description}
         />
       </section>
     </main>
