@@ -2,7 +2,7 @@ import { socials } from "../contents/Footer";
 import { Link } from "react-router-dom";
 import { FC } from "react";
 
-type SocialProps = {
+export type SocialProps = {
   jusitfy: "CENTER" | "LEFT" | "RIGHT";
   size: number;
 };

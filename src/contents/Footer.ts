@@ -3,10 +3,10 @@ import { BsGithub } from "react-icons/bs";
 import { SiGitlab } from "react-icons/si";
 
 export const DEFAULT_SIZE: number = 20;
-type Size = {
+export type Size = {
   size: number;
 };
-type SocialInputs = {
+export type SocialInputs = {
   title: string;
   component: FC<Size>;
   url: string;
