@@ -66,11 +66,7 @@ export const ContactChunk: FC<ContactForm> = (props) => {
           emailMe ? "flex" : "hidden"
         } flex-col items-center justify-evenly py-5 rounded-md font-poppins`}
       >
-        <IoMdArrowRoundBack
-          size={20}
-          className="rounded-full shadow-black shadow-sm"
-          onClick={() => setEmailMe(false)}
-        />
+        <IoMdArrowRoundBack size={20} onClick={() => setEmailMe(false)} />
         <h1 className="font-semibold text-xl">Contact Me via Email.</h1>
         <form
           onSubmit={handleSubmit}

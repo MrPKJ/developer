@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { IoIosLaptop } from "react-icons/io";
+import { IoLaptopSharp } from "react-icons/io5";
 import { Social, SocialProps } from "../chunks/Social";
 import { Size } from "./Footer";
 
@@ -20,9 +20,9 @@ export const Hero: HomeContent = {
   description:
     "Hi, I'm Priyanshu Kumar Jha. A passionate Programmer based in Bihar, India. 📍",
   image: {
-    url: "https://avatars.githubusercontent.com/u/127951878?v=4",
+    url: "assets/developer.jpeg",
     description: "Developer",
   },
-  supporticon: IoIosLaptop,
+  supporticon: IoLaptopSharp,
   socialicon: Social,
 };
