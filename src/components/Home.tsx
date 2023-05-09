@@ -1,6 +1,7 @@
+import { FC } from "react";
 import { Hero } from "../contents/Home";
 
-export const Home = () => {
+export const Home: FC = () => {
   return (
     <main className="w-full xl:h-[calc(87vh-80px)] h-auto bg-[#f9f9f9] flex flex-col justify-center items-center box-border">
       <section className="xl:w-[950px] w-full h-auto flex flex-col-reverse xl:flex-row xl:px-0 px-10 justify-between items-center gap-10 my-10">

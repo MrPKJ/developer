@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { FC, useState } from "react";
 import { nav } from "../contents/Navbar";
 import { GrMenu } from "react-icons/gr";
 import { HiMenuAlt1 } from "react-icons/hi";
 
-export const Navbar = () => {
+export const Navbar: FC = () => {
   let [toggle, setToggle] = useState(false);
   return (
     <header className="w-full h-20 bg-white shadow-md md:px-12 px-6 flex flex-row justify-between items-center font-poppins box-border md:py-5 py-4">
@@ -43,7 +43,7 @@ export const Navbar = () => {
               <Link to={content.path} key={index}>
                 <p
                   id={content.id}
-                  className="hover:text-blue-500"
+                  className="hover:text-blue-500 text-black"
                   onClick={() => {
                     setToggle(false);
                   }}

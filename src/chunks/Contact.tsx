@@ -24,7 +24,7 @@ export const ContactChunk: FC<ContactForm> = (props) => {
       <section
         className={`lg:w-[500px] w-full h-[90%] bg-white ${
           emailMe ? "hidden" : "flex"
-        } flex-col items-center justify-center py-5 rounded-md`}
+        } flex-col items-center justify-center py-5 rounded-md shadow-md shadow-gray-200`}
       >
         <img
           src={props.locationArt}
@@ -122,7 +122,7 @@ export const ContactChunk: FC<ContactForm> = (props) => {
           <input
             type="submit"
             value={`Submit`}
-            className={`w-3/6 py-2 border border-black ${
+            className={`w-3/6 py-2 border-md border-black ${
               submit ? "bg-white text-black" : "bg-black text-white"
             } rounded-md mt-3`}
             onMouseOver={() => {

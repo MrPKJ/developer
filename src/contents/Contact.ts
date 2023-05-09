@@ -32,7 +32,7 @@ export const list: ContactList = [
       state: "Bihar",
       country: "India",
     },
-    locationArt: "assets/india.png",
+    locationArt: "assets/india.jpg",
     email: "Priyanshukj02@gmail.com",
     phoneNo: 9718852917,
   },

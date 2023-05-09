@@ -1,7 +1,8 @@
+import { FC } from "react";
 import { ContactChunk } from "../chunks/Contact";
 import { list } from "../contents/Contact";
 
-export const Contact = () => {
+export const Contact: FC = () => {
   const contactLenght = list.length;
   let grid: string = "grid-cols-1";
   if (contactLenght == 1) {
@@ -13,7 +14,7 @@ export const Contact = () => {
   }
   return (
     <main
-      className={`h-[calc(87vh-80px)] bg-[#f9f9f9] w-full grid xl:${grid} grid-cols-1 place-items-center shadow-black shadow-sm`}
+      className={`h-[calc(87vh-80px)] bg-[#f9f9f9] w-full grid xl:${grid} grid-cols-1 place-items-center shadow-black shadow-sm font-poppins`}
     >
       {list.map((content, index) => {
         return (

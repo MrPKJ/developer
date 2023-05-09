@@ -1,7 +1,8 @@
+import { FC } from "react";
 import { Skill } from "../chunks/Skill";
 import { Developer } from "../contents/About";
 
-export const About = () => {
+export const About: FC = () => {
   return (
     <main className="w-full xl:h-[calc(87vh-80px)] h-auto bg-[#f9f9f9] flex flex-col justify-center items-center box-border">
       <section className="w-full h-5/6 flex flex-col justify-center items-center gap-10 py-8 bg-white">
