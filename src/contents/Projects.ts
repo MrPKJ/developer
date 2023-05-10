@@ -53,7 +53,7 @@ export const Works: Project = {
         github: "https://github.com/Priyanshukj02/developer",
         gitlab: "https://gitlab.com/Priyanshukj02/developer",
       },
-      link: "https://developer.fundbank.in",
+      link: "https://dev.fundbank.in",
     },
   ],
 };
